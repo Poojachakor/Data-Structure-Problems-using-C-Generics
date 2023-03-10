@@ -1,4 +1,6 @@
-﻿namespace DataStructureProblemUsingGenerics
+﻿using static DataStructureProblemUsingGenerics.GenericClassPrintArray;
+
+namespace DataStructureProblemUsingGenerics
 {
     internal class Program
     {
@@ -12,7 +14,7 @@
             string[] stringArray = { "HOW", "ARE", "YOU" };
 
             Console.WriteLine("Please choose option of program to execute");
-            Console.WriteLine("1:PrintArray \n2: PrintArrayUsingGenericMethod");
+            Console.WriteLine("1: PrintArray \n2: PrintArrayUsingGenericMethod \n3: PrintArrayUsingGenericClass ");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -28,6 +30,16 @@
                     GenericsPrintArray.ToPrint<double>(doubleArray);
                     GenericsPrintArray.ToPrint<char>(charArray);
                     GenericsPrintArray.ToPrint<string>(stringArray);
+                    break;
+                case 3:
+                    GenericClass<int> intObj = new GenericClass<int>(intArray);
+                    intObj.ToPrint();
+                    GenericClass<double> doubleObj = new GenericClass<double>(doubleArray);
+                    doubleObj.ToPrint();
+                    GenericClass<char> charObj = new GenericClass<char>(charArray);
+                    charObj.ToPrint();
+                    GenericClass<string> stringObj = new GenericClass<string>(stringArray);
+                    stringObj.ToPrint();
                     break;
                 default:
                     Console.WriteLine("Choose the correct option");
