@@ -14,7 +14,7 @@ namespace DataStructureProblemUsingGenerics
             string[] stringArray = { "HOW", "ARE", "YOU" };
 
             Console.WriteLine("Please choose option of program to execute");
-            Console.WriteLine("1: PrintArray \n2: PrintArrayUsingGenericMethod \n3: PrintArrayUsingGenericClass ");
+            Console.WriteLine("1: PrintArray \n2: PrintArrayUsingGenericMethod \n3: PrintArrayUsingGenericClass \n4. FindMaximunIntergerNumber");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -26,10 +26,10 @@ namespace DataStructureProblemUsingGenerics
                     Console.ReadLine();
                     break;
                 case 2:
-                    GenericsPrintArray.ToPrint<int>(intArray);
-                    GenericsPrintArray.ToPrint<double>(doubleArray);
-                    GenericsPrintArray.ToPrint<char>(charArray);
-                    GenericsPrintArray.ToPrint<string>(stringArray);
+                    GenericPrintArray.ToPrint<int>(intArray);
+                    GenericPrintArray.ToPrint<double>(doubleArray);
+                    GenericPrintArray.ToPrint<char>(charArray);
+                    GenericPrintArray.ToPrint<string>(stringArray);
                     break;
                 case 3:
                     GenericClass<int> intObj = new GenericClass<int>(intArray);
@@ -40,6 +40,13 @@ namespace DataStructureProblemUsingGenerics
                     charObj.ToPrint();
                     GenericClass<string> stringObj = new GenericClass<string>(stringArray);
                     stringObj.ToPrint();
+                    break;
+                case 4:
+                    Console.WriteLine("Enter 3 Integer Numbers");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    int b = Convert.ToInt32(Console.ReadLine());
+                    int c = Convert.ToInt32(Console.ReadLine());
+                    MaximumIntegerNumber.FindMaxValue(a, b, c);
                     break;
                 default:
                     Console.WriteLine("Choose the correct option");
